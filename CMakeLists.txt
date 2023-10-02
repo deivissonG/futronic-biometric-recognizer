@@ -12,7 +12,7 @@ include_directories(
 
 add_library( ftrScanAPI SHARED IMPORTED )
 
-set_target_properties( ftrScanAPI PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/lib/libScanAPI.so )
+set_target_properties( ftrScanAPI PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/external/lib/libScanAPI.so )
 
 add_library(fbr SHARED
         library.cpp
@@ -43,5 +43,7 @@ ADD_CUSTOM_COMMAND(
         "${CMAKE_CURRENT_SOURCE_DIR}/external/bin/cwsq"
         "${CMAKE_CURRENT_SOURCE_DIR}/external/bin/mindtct"
         "${CMAKE_CURRENT_SOURCE_DIR}/external/lib/libScanAPI.so"
+        "${CMAKE_CURRENT_SOURCE_DIR}/external/lib/libusb-1.0.so.0"
+        "${CMAKE_CURRENT_SOURCE_DIR}/external/lib/libusb-1.0.so.0.3.0"
         "${CMAKE_CURRENT_SOURCE_DIR}/build/libfbr.so"
 )

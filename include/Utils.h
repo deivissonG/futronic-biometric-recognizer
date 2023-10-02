@@ -25,6 +25,7 @@
 #define __Fbr__Utils__
 
 #include <string>
+#include <iostream>
 
 #define DEBUG 0
 

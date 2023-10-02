@@ -25,3 +25,17 @@ echo "libfbr.so copied"
 cp -f ./libScanAPI.so /usr/local/lib
 chmod +rx /usr/local/lib/libScanAPI.so
 echo "libScanAPI.so copied"
+
+if [ -e /usr/lib/libusb-1.0.so.0 ]
+then
+    echo "libusb-1.0.so.0 exists"
+else
+  cp -f ./lbusb-1.0.so.0 /usr/local/lib
+fi
+
+if [ -e /usr/lib/libusb-1.0.so.0.3.0 ]
+then
+    echo "libusb-1.0.so.0.3.0 exists"
+else
+  cp -f ./lbusb-1.0.so.0.3.0 /usr/local/lib
+fi

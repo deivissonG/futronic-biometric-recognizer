@@ -70,6 +70,7 @@ Scanner::~Scanner()
 
 void Scanner::ScanImage()
 {
+  tries++;
   if(!ftrScanGetImageSize(m_Device, &m_ImageSize))
   {
     throw ScannerException("Failed to get image size");
@@ -80,7 +81,6 @@ void Scanner::ScanImage()
   LOG("Waiting for finger...");
   while(true)
   {
-    tries++;
     ftrScanSetDiodesStatus(m_Device, (unsigned int)100/2, 0); // green led ON, red led OFF
     if(ftrScanIsFingerPresent(m_Device, NULL)) break;
     if (m_MatchCB != NULL)
